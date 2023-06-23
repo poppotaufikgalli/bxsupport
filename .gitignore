@@ -63,7 +63,6 @@ buck-out/
 /ios/Pods/
 /vendor/bundle/
 
-public/*.js
-.nuxt/
-.output/
-
+public/
+\.nuxt/
+\.output/
