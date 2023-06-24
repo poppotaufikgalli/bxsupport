@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
   const firestore = getFirestore(app)
 
   const reqData = await readBody(event)
-  const { from, from_id, to, tipe, title, body } = reqData
+  const { from, from_id, to, to_id, tipe, title, body } = reqData
 
   try {
     const docRef = await addDoc(collection(firestore, tipe), {
@@ -22,6 +22,7 @@ export default defineEventHandler(async (event) => {
       sentAt: serverTimestamp(),
       sentBy: from_id,
       tipe: tipe,
+      sendTo: to_id,
       //sentTo: 'D'+costumer_id,
       orderId: title,
     });
