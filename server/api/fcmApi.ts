@@ -21,9 +21,10 @@ export default defineEventHandler(async (event) => {
       messageText : body,
       sentAt: serverTimestamp(),
       sentBy: from_id,
+      sentBy_token: from,
       tipe: tipe,
       sendTo: to_id,
-      //sentTo: 'D'+costumer_id,
+      sendTo_token: to,
       orderId: title,
     });
     console.log("Document written with ID: ", docRef.id);
